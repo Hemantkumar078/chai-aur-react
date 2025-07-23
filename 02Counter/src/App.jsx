@@ -20,7 +20,11 @@ function App() {
     setCounter(counter=>{
       if(counter+1==20){
         setProfile(profile=>
-          produce(profile,newprofile=>{
+          produce(profile,newprofile=>{//we are using immer to avoid direct mutation(or deep copy) because immer is a library that helps us to avoid direct mutation)
+            // immer will create a new copy of the object and then we can modify it
+            // and then immer will take care of the immutability
+            //if we need deep copy beacause if using the same reference or object ❌ React may skip rendering!
+            //because react not checking in depth its only view from the top if it matches it not goes below
             newprofile.user.preferences.theme.color="red";
           })
         );

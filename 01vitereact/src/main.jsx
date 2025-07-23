@@ -22,9 +22,9 @@ const reactElement=react.createElement(
   anotherUser//variables injected at the end react.createElement
 )
 const root=reactDOM.createRoot(document.getElementById('root')).render(
-  //<StrictMode>
+  <StrictMode>
    <App />
    //reactElement
   // anotherElement
-  //</StrictMode>,
+  </StrictMode>,
 )
